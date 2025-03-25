@@ -5,18 +5,17 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-import "./ddd-card.js";
 
 /**
- * `ddd-card-list`
+ * `ddd-card`
  *
  * @demo index.html
- * @element ddd-card-list
+ * @element ddd-card
  */
-export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
+export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "ddd-card-list";
+    return "ddd-card";
   }
 
   constructor() {
@@ -30,7 +29,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/ddd-card-list.ar.json", import.meta.url).href +
+        new URL("./locales/ddd-card.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
@@ -59,7 +58,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
         padding: var(--ddd-spacing-4);
       }
       h3 span {
-        font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
+        font-size: var(--ddd-card-label-font-size, var(--ddd-font-size-s));
       }
     `];
   }
@@ -82,4 +81,4 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(DddCardList.tag, DddCardList);
+globalThis.customElements.define(DddCard.tag, DddCard);
