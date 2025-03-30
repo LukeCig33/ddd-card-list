@@ -64,18 +64,17 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         background-color: var(--ddd-theme-default-white);
         width: 400px;
         border: 3px solid var(--ddd-theme-primary);
-        padding: 0;
-        margin: 8px;
+        padding: var(--ddd-spacing-0);
+        margin: var(--ddd-spacing-2);
         overflow: hidden;
-        border-radius: 16px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: var(--ddd-radius-lg);
+        box-shadow: var(--ddd-boxShadow-sm);
       }
       .card-image {
         width: 100%;
         height: auto;
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
+        margin: var(--ddd-spacing-2);
+        padding: var(--ddd-spacing-0);
         overflow: hidden;
       }
       .card-image img {
@@ -88,7 +87,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         height: 50px;
         text-align: left;
         color: var(--ddd-theme-default-nittanyNavy);
-        padding: 8px;
+        padding: var(--ddd-spacing-2);
       }
       .card-text {
         width: 100%;
@@ -97,20 +96,14 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-default-nittanyNavy);
         font-size: var(--ddd-font-size-s);
         overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: normal;
-        line-height: 1.5;
       }
       button{
         background-color: var(--ddd-theme-default-beaverBlue);
         color: var(--ddd-theme-default-white);
-        padding: 8px 16px;
         text-align: center;
         display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        border: none;
-        border-radius: 12px;
+        font-size: var(--ddd-font-size-4xs);
+        border-radius: var(--ddd-radius-md);
         width: 85%;
         box-sizing: border-box;
       }
