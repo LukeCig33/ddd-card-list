@@ -15,11 +15,19 @@
     #demo {
       margin: var(--ddd-spacing-2);
     }
+    ddd-card {
+      margin: var(--ddd-spacing-2);
+      border: var(--ddd-border-md);
+      border-radius: var(--ddd-radius-lg);
+      display: inline-block;
+    }
     ddd-card-list {
       margin: var(--ddd-spacing-2);
       border: var(--ddd-border-md);
       border-radius: var(--ddd-radius-lg);
+      display: inline-block;
     }
+
     ddd-card-list:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
@@ -36,7 +44,7 @@
   <div id="demo">
     <h1>ddd-card-list</h1>
     <!-- this is going to do whatever the tag's defaults are -->
-      <div class="card-container">
+
         <ddd-card title="Abington"
         label="whatever"
         data-link="https://www.psu.edu/academics/campuses/abington"
@@ -53,8 +61,8 @@
         ddd-accent="5">
           <p>In central Pennsylvania close to University Park, Penn State Altoona offers the appeal of a small college with the prestige of a major research university.</p>
         </ddd-card>
+
     </div>
-  </div>
   <script type="module" src="./ddd-card-list.js"></script>
   <script type="module" src="./ddd-card.js"></script>
 

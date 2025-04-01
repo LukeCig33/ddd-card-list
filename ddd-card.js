@@ -36,6 +36,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      dddPrimary: { type: String, attribute: "ddd-primary" },
     };
   }
 
@@ -53,18 +54,20 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
       }
-      h3 span {
-        font-size: var(--ddd-card-label-font-size, var(--ddd-font-size-s));
-      }
       .card{
         background-color: var(--ddd-theme-default-white);
-        width: 400px;
+        width: 450px;
         border: 3px solid var(--ddd-theme-primary);
         padding: var(--ddd-spacing-0);
         margin: var(--ddd-spacing-2);
         overflow: hidden;
         border-radius: var(--ddd-radius-lg);
         box-shadow: var(--ddd-boxShadow-sm);
+      }
+      .card-bar {
+        background-color: var(--ddd-theme-default-nittanyNavy);
+        width: 100%;
+        height: 15px;
       }
       .card-image img {
         width: 100%;
@@ -85,6 +88,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-default-nittanyNavy);
         font-size: var(--ddd-font-size-s);
         overflow: hidden;
+        padding: var(--ddd-spacing-2);
       }
       button{
         background-color: var(--ddd-theme-default-beaverBlue);
@@ -92,9 +96,11 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         text-align: center;
         display: inline-block;
         font-size: var(--ddd-font-size-4xs);
+        padding : var(--ddd-spacing-4);
         border-radius: var(--ddd-radius-md);
         width: 85%;
         box-sizing: border-box;
+        margin-bottom: var(--ddd-spacing-4);
       }
       button:hover {
         background-color: var(--ddd-theme-default-nittanyNavy);
@@ -103,25 +109,27 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   // Lit render the HTML
-  render() {
-    return html`
-  <div class="wrapper">
-    <div class="card">
-      <div class="card-image">
-        <img src="${this.getAttribute('data-image') || 'https://via.placeholder.com/350x200'}" alt="${this.title}" />
-      </div>
-      <div class="card-title">
-        <h2>${this.title}</h2>
-      </div>
-      <div class="card-text">
-        <slot></slot> <!-- This will render the content passed inside the <ddd-card> tag -->
-        <a href="${this.getAttribute('data-link') || '#'}" target="_blank" rel="noopener">
-          <button id="explore">Explore ></button>
-        </a>
+render() {
+  return html`
+    <div class="wrapper">
+      <div class="card">
+        <div class="card-image">
+          <img src="${this.getAttribute('data-image') || 'https://via.placeholder.com/350x200'}" alt="${this.title}" />
+        </div>
+        <div class="card-bar"></div> <!-- Bar below the image -->
+        <div class="card-title">
+          <h2>${this.title}</h2>
+        </div>
+        <div class="card-text">
+          <slot></slot>
+          <a href="${this.getAttribute('data-link') || '#'}" target="_blank" rel="noopener">
+            <button id="explore">Explore ></button>
+          </a>
+        </div>
       </div>
     </div>
-  </div>`;
-  }
+  `;
+}
 
   /**
    * haxProperties integration via file reference

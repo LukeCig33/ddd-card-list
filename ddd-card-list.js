@@ -61,6 +61,16 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
       }
+      .card{
+        background-color: var(--ddd-theme-default-white);
+        width: 450px;
+        border: 3px solid var(--ddd-theme-primary);
+        padding: var(--ddd-spacing-0);
+        margin: var(--ddd-spacing-2);
+        overflow: hidden;
+        border-radius: var(--ddd-radius-lg);
+        box-shadow: var(--ddd-boxShadow-sm);
+      }
     `];
   }
 
@@ -68,7 +78,8 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  <div class="card">
+    </div>
   <slot></slot>
 </div>`;
   }
