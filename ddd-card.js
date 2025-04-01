@@ -70,13 +70,6 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         border-radius: var(--ddd-radius-lg);
         box-shadow: var(--ddd-boxShadow-sm);
       }
-      .card-image {
-        width: 100%;
-        height: auto;
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-0);
-        overflow: hidden;
-      }
       .card-image img {
         width: 100%;
         height: auto;
@@ -137,10 +130,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
   /**
    * haxProperties integration via file reference
    */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
-  }
+
 }
 
 globalThis.customElements.define(DddCard.tag, DddCard);
