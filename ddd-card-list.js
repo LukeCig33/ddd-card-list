@@ -44,45 +44,29 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     };
   }
 
-  // Lit scoped styles
-  static get styles() {
-    return [super.styles,
-    css`
-      :host {
-        display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
-      }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      h3 span {
-        font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
-      }
-      .card{
-        background-color: var(--ddd-theme-default-white);
-        width: 450px;
-        border: 3px solid var(--ddd-theme-primary);
-        padding: var(--ddd-spacing-0);
-        margin: var(--ddd-spacing-2);
-        overflow: hidden;
-        border-radius: var(--ddd-radius-lg);
-        box-shadow: var(--ddd-boxShadow-sm);
-      }
-    `];
-  }
+// Lit scoped styles
+static get styles() {
+  return [super.styles,
+  css`
+    :host {
+      display: block;
+      font-family: var(--ddd-font-navigation);
+    }
+    .wrapper {
+      display: flex; /* Enables flexbox layout */
+      flex-wrap: wrap; /* Allows cards to wrap to the next row if needed */
+    }
+  `];
+}
 
-  // Lit render the HTML
-  render() {
-    return html`
-<div class="wrapper">
-  <div class="card">
+// Lit render the HTML
+render() {
+  return html`
+    <div class="wrapper">
+      <slot></slot> <!-- Cards will be slotted here -->
     </div>
-  <slot></slot>
-</div>`;
-  }
+  `;
+}
 
   /**
    * haxProperties integration via file reference

@@ -56,18 +56,29 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
       }
       .card{
         background-color: var(--ddd-theme-default-white);
-        width: 450px;
+        height: 675px;
+        width: 430px;
         border: 3px solid var(--ddd-theme-primary);
         padding: var(--ddd-spacing-0);
         margin: var(--ddd-spacing-2);
         overflow: hidden;
         border-radius: var(--ddd-radius-lg);
         box-shadow: var(--ddd-boxShadow-sm);
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
       }
       .card-bar {
         background-color: var(--ddd-theme-default-nittanyNavy);
         width: 100%;
         height: 15px;
+      }
+      .card-image {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
       }
       .card-image img {
         width: 100%;
@@ -82,25 +93,36 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         padding: var(--ddd-spacing-2);
       }
       .card-text {
-        width: 100%;
+        width: 95%;
         height: auto;
-        text-align: center;
+        text-align: left;
         color: var(--ddd-theme-default-nittanyNavy);
+        padding: var(--ddd-spacing-2);
         font-size: var(--ddd-font-size-s);
         overflow: hidden;
-        padding: var(--ddd-spacing-2);
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
-      button{
-        background-color: var(--ddd-theme-default-beaverBlue);
+      .button-container {
+        text-align: center;
+        margin-top: auto;
+        padding-bottom: var(--ddd-spacing-4);
+      }
+      button {
+        background-color: var(--ddd-theme-default-link);
         color: var(--ddd-theme-default-white);
         text-align: center;
         display: inline-block;
         font-size: var(--ddd-font-size-4xs);
-        padding : var(--ddd-spacing-4);
+        padding: var(--ddd-spacing-4);
         border-radius: var(--ddd-radius-md);
         width: 85%;
         box-sizing: border-box;
-        margin-bottom: var(--ddd-spacing-4);
+        margin: 0 auto;
+        cursor: pointer;
+        border: none;
       }
       button:hover {
         background-color: var(--ddd-theme-default-nittanyNavy);
@@ -121,7 +143,9 @@ render() {
           <h2>${this.title}</h2>
         </div>
         <div class="card-text">
-          <slot></slot>
+        <slot></slot>
+        </div>
+        <div class="button-container">
           <a href="${this.getAttribute('data-link') || '#'}" target="_blank" rel="noopener">
             <button id="explore">Explore ></button>
           </a>
