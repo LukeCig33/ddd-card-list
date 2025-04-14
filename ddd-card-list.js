@@ -53,8 +53,9 @@ static get styles() {
       font-family: var(--ddd-font-navigation);
     }
     .wrapper {
-      display: flex; /* Enables flexbox layout */
-      flex-wrap: wrap; /* Allows cards to wrap to the next row if needed */
+      display: flex;
+      flex-wrap: wrap;
+      background-color: var(--ddd-theme-default-shrineLight);
     }
   `];
 }

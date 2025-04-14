@@ -47,7 +47,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
+        background-color: var(--ddd-theme-default-shrineLight);
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
@@ -63,7 +63,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-2);
         overflow: hidden;
         border-radius: var(--ddd-radius-lg);
-        box-shadow: var(--ddd-boxShadow-sm);
+        box-shadow: var(--ddd-boxShadow-md);
         justify-content: space-between;
         display: flex;
         flex-direction: column;
